@@ -11,7 +11,7 @@ def vehicle_schema(
     vin: Optional[str] = None,
     nickname: Optional[str] = None,
 ) -> Dict[str, Any]:
-    """Create the canonical vehicle document to store in MongoDB."""
+    """The vehicle schema document to store in mongo."""
     return {
         "user_id": user_id,  # logical owner (for now just "mark")
         "year": year,
@@ -34,7 +34,7 @@ def maintenance_event_schema(
     vendor: Optional[str] = None,
     notes: Optional[str] = None,
 ) -> Dict[str, Any]:
-    """Create the canonical maintenance event document to store in MongoDB."""
+    """The maintenance event schema to store in mongo."""
     return {
         "user_id": user_id,
         "vehicle_id": vehicle_id,
@@ -58,7 +58,7 @@ def expense_schema(
     description: Optional[str] = None,
     odometer: Optional[int] = None,
 ) -> Dict[str, Any]:
-    """Canonical schema for an expense event (fuel, insurance, etc.)."""
+    """The expense event schema to store in mongo."""
     return {
         "user_id": user_id,
         "vehicle_id": vehicle_id,
