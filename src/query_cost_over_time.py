@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Dict, List, Any
+from typing import Dict
 
 from src.db import get_collection
 
@@ -27,7 +27,7 @@ def main() -> None:
 
     monthly: Dict[str, float] = {}
 
-    # maintenance ---
+    # maintenance
     for m in maintenance.find({"vehicle_id": vehicle_id}):
         key = month_key(m["date"])
         monthly[key] = monthly.get(key, 0.0) + float(m["cost"])

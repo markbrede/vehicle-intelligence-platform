@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict
 
 from bson import ObjectId
 
@@ -23,7 +22,7 @@ def main() -> None:
 
     vehicle_id: ObjectId = vehicle["_id"]
 
-    # --- Monthly totals for maintenance ---
+    # Monthly totals for maintenance
     maintenance_monthly_pipeline = [
         {"$match": {"vehicle_id": vehicle_id}},
         {
@@ -36,7 +35,7 @@ def main() -> None:
         {"$sort": {"_id.year": 1, "_id.month": 1}},
     ]
 
-    # --- Monthly totals for expenses ---
+    # Monthly totals for expenses
     expenses_monthly_pipeline = [
         {"$match": {"vehicle_id": vehicle_id}},
         {
@@ -87,7 +86,7 @@ def main() -> None:
             f"{month} | Maint: ${m:8.2f} | Exp: ${e:8.2f} | Month: ${month_total:8.2f} | Cumulative: ${cumulative:8.2f}"
         )
 
-    # --- Totals by category (maintenance) ---
+    # Totals by category (maintenance)
     maint_by_cat_pipeline = [
         {"$match": {"vehicle_id": vehicle_id}},
         {
@@ -100,7 +99,7 @@ def main() -> None:
         {"$sort": {"total": -1}},
     ]
 
-    # --- Totals by category (expenses) ---
+    # Totals by category (expenses)
     exp_by_cat_pipeline = [
         {"$match": {"vehicle_id": vehicle_id}},
         {

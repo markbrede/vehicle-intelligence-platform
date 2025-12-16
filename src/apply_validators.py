@@ -1,9 +1,6 @@
 from __future__ import annotations
 
-from pymongo.command_cursor import CommandCursor
-
 from src.db import get_db
-
 
 def apply_validator(collection: str, validator: dict) -> None:
     db = get_db()
