@@ -11,5 +11,5 @@
 | 12/15/2025 | Documented system architecture, durability, recovery, scaling characteristics, and failure modes for system design interview prep                                                           | 1.5   |
 | 12/15/2025 | Clean up unused imports and type hints in analytics pipelines                                                                                                                               | .25   |
 | 12/16/2025 | 9 hour day fully implementing Neo4j graph layer, MongoDB → Neo4j ingestion, Cypher analytics for event timelines and category spend, and validated graph integrity                          | 9.0   |
-
-**Total Hours: 29.25**
+| 12/16/2025 | Completed "Final and Report" + recorded video of project to post to in class channel                    | 2.0   |
+**Total Hours: 31.25**
